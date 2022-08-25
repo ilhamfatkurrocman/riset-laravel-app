@@ -15,4 +15,17 @@ class EmployeeController extends Controller
 
         return view('datapegawai', compact('data'));
     }
+
+    public function tambahdatapegawai() 
+    {
+        return view('tambahpegawai');
+    }
+
+    public function insertdatapegawai(Request $request)
+    {
+        // dd($request->all());
+        Employee::create($request->all());
+
+        return redirect()->route('pegawai')->with('success', 'Data Berhasil Ditambahkan');
+    }
 }

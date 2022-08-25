@@ -19,3 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/pegawai',[EmployeeController::class, 'index'])->name('pegawai');
+Route::get('/tambahdatapegawai',[EmployeeController::class, 'tambahdatapegawai'])->name('tambahdatapegawai');
+
+Route::post('/insertdatapegawai',[EmployeeController::class, 'insertdatapegawai'])->name('insertdatapegawai');
+

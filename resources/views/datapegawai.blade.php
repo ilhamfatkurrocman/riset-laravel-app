@@ -14,8 +14,14 @@
         <h1 class="text-center mb-4">Data Pegawai</h1>
         
         <div class="container">
-        <button type="button" class="btn btn-success">+ Tambah Data</button>
+        <a href="/tambahdatapegawai" class="btn btn-success">+ Tambah Data</a>
             <div class="row">
+            @if ($message = Session::get('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Selamat!</strong> {{ $message }}.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
                 <table class="table">
                     <thead>
                         <tr>
@@ -23,6 +29,7 @@
                             <th scope="col">Nama Lengkap</th>
                             <th scope="col">Jenis Kelamin</th>
                             <th scope="col">No. Telepon</th>
+                            <th scope="col">Dibuat</th>
                             <th scope="col">Aksi</th>
                         </tr>
                     </thead>
@@ -33,6 +40,7 @@
                             <td>{{ $row->nama }}</td>
                             <td>{{ $row->jenis_kelamin }}</td>
                             <td>{{ $row->nomor_telepon }}</td>
+                            <td>{{ $row->created_at->format('d M Y') }} ({{ $row->created_at->diffForHumans() }})</td>
                             <td>
                                 <button type="button" class="btn btn-warning">Edit</button>
                                 <button type="button" class="btn btn-danger">Delete</button>
