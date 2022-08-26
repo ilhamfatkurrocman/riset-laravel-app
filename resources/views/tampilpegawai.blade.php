@@ -11,30 +11,30 @@
         <title>Riset CRUD - Laravel 8</title>
     </head>
     <body>
-        <h1 class="text-center mb-4">Tambah Data Pegawai</h1>
+        <h1 class="text-center mb-4">Edit Data Pegawai</h1>
         
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-8">
                     <div class="card">
                         <div class="card-body">
-                            <form action="/insertdatapegawai" method="POST" enctype="multipart/form-data">
+                            <form action="/updatedatapegawai/{{ $data->id }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="mb-3">
                                     <label class="form-label">Nama Lengkap Pegawai</label>
-                                    <input type="text" class="form-control" id="nama" name="nama" aria-describedby="emailHelp" required>
+                                    <input type="text" class="form-control" id="nama" name="nama" aria-describedby="emailHelp"  value="{{ $data->nama }}">
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Jenis Kelamin</label>
-                                    <select class="form-select" aria-label="Default select example" id="jenis_kelamin" name="jenis_kelamin" required>
-                                        <option selected> Pilih Jenis Kelamin </option>
+                                    <select class="form-select" aria-label="Default select example" id="jenis_kelamin" name="jenis_kelamin">
+                                        <option selected>{{ $data->jenis_kelamin }}</option>
                                         <option value="Laki - Laki">Laki - Laki</option>
                                         <option value="Perempuan">Perempuan</option>
                                     </select>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Nomor Telepon</label>
-                                    <input type="number" class="form-control" id="nomor_telepon" name="nomor_telepon" required>
+                                    <input type="number" class="form-control" id="nomor_telepon" name="nomor_telepon"  value="{{ $data->nomor_telepon }}">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Simpan Data</button>
                             </form>

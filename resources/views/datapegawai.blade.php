@@ -21,6 +21,11 @@
                     <strong>Selamat!</strong> {{ $message }}.
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
+            {{-- @else
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Maaf!</strong> {{ $message }}.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div> --}}
             @endif
                 <table class="table">
                     <thead>
@@ -42,8 +47,8 @@
                             <td>{{ $row->nomor_telepon }}</td>
                             <td>{{ $row->created_at->format('d M Y') }} ({{ $row->created_at->diffForHumans() }})</td>
                             <td>
-                                <button type="button" class="btn btn-warning">Edit</button>
-                                <button type="button" class="btn btn-danger">Delete</button>
+                                <a href="/tampilkandatapegawai/{{ $row->id }}" class="btn btn-warning">Edit</a>
+                                <a class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
                     @endforeach

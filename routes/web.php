@@ -14,12 +14,15 @@ use App\Http\Controllers\EmployeeController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/pegawai',[EmployeeController::class, 'index'])->name('pegawai');
+Route::get('/',[EmployeeController::class, 'index'])->name('pegawai');
 Route::get('/tambahdatapegawai',[EmployeeController::class, 'tambahdatapegawai'])->name('tambahdatapegawai');
 
 Route::post('/insertdatapegawai',[EmployeeController::class, 'insertdatapegawai'])->name('insertdatapegawai');
+
+Route::get('/tampilkandatapegawai/{id}',[EmployeeController::class, 'tampilkandatapegawai'])->name('tampilkandatapegawai');
+Route::post('/updatedatapegawai/{id}',[EmployeeController::class, 'updatedatapegawai'])->name('updatedatapegawai');
 
