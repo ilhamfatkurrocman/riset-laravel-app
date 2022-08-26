@@ -49,9 +49,11 @@ class EmployeeController extends Controller
         $data = Employee::find($id);
         $data->update($request->all());
 
-        // if ($request->hasFile('foto')) {
-        //     $request->file('foto')->move('fotopegawai/', $request->file('foto')->getClientOriginalName());
-        // }
+        if ($request->hasFile('foto')) {
+            $request->file('foto')->move('fotopegawai/', $request->file('foto')->getClientOriginalName());
+            $data->foto = $request->file('foto')->getClientOriginalName();
+            $data->update();
+        }
 
         return redirect()->route('pegawai')->with('success', 'Data Berhasil Diupdate');
     }
