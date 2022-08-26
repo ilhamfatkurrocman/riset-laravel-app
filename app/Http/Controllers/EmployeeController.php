@@ -24,7 +24,14 @@ class EmployeeController extends Controller
     public function insertdatapegawai(Request $request)
     {
         // dd($request->all());
-        Employee::create($request->all());
+        $data = Employee::create($request->all());
+
+        if ($request->hasFile('foto'))
+        {
+            $request->file('foto')->move('fotopegawai/', $request->file('foto')->getClientOriginalName());
+            $data->foto = $request->file('foto')->getClientOriginalName();
+            $data->save();
+        }
 
         return redirect()->route('pegawai')->with('success', 'Data Berhasil Ditambahkan');
     }
@@ -42,6 +49,18 @@ class EmployeeController extends Controller
         $data = Employee::find($id);
         $data->update($request->all());
 
+        // if ($request->hasFile('foto')) {
+        //     $request->file('foto')->move('fotopegawai/', $request->file('foto')->getClientOriginalName());
+        // }
+
         return redirect()->route('pegawai')->with('success', 'Data Berhasil Diupdate');
+    }
+
+    public function deletedatapegawai($id)
+    {
+        $data = Employee::find($id);
+        $data->delete();
+
+        return redirect()->route('pegawai')->with('success', 'Data Berhasil Didelete');
     }
 }

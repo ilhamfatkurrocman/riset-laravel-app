@@ -33,6 +33,10 @@
                                     </select>
                                 </div>
                                 <div class="mb-3">
+                                    <label class="form-label">Foto</label>
+                                    <input type="file" class="form-control" id="foto" name="foto" required>
+                                </div>
+                                <div class="mb-3">
                                     <label class="form-label">Nomor Telepon</label>
                                     <input type="number" class="form-control" id="nomor_telepon" name="nomor_telepon" required>
                                 </div>

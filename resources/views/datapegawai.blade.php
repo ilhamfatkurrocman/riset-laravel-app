@@ -34,21 +34,26 @@
                             <th scope="col">Nama Lengkap</th>
                             <th scope="col">Jenis Kelamin</th>
                             <th scope="col">No. Telepon</th>
+                            <th scope="col">Foto</th>
                             <th scope="col">Dibuat</th>
                             <th scope="col">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
+                    @php
+                        $no = 1;
+                    @endphp
                     @foreach ($data as $row)
                         <tr>
-                            <th scope="row">{{$row->id}}</th>
+                            <th scope="row">{{ $no++ }}</th>
                             <td>{{ $row->nama }}</td>
                             <td>{{ $row->jenis_kelamin }}</td>
                             <td>{{ $row->nomor_telepon }}</td>
+                            <td><img src="{{ asset('fotopegawai/'. $row->foto) }}" style="width: 50px"> </td>
                             <td>{{ $row->created_at->format('d M Y') }} ({{ $row->created_at->diffForHumans() }})</td>
                             <td>
                                 <a href="/tampilkandatapegawai/{{ $row->id }}" class="btn btn-warning">Edit</a>
-                                <a class="btn btn-danger">Delete</a>
+                                <a href="/deletedatapegawai/{{ $row->id }}" class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
                     @endforeach

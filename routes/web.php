@@ -25,4 +25,5 @@ Route::post('/insertdatapegawai',[EmployeeController::class, 'insertdatapegawai'
 
 Route::get('/tampilkandatapegawai/{id}',[EmployeeController::class, 'tampilkandatapegawai'])->name('tampilkandatapegawai');
 Route::post('/updatedatapegawai/{id}',[EmployeeController::class, 'updatedatapegawai'])->name('updatedatapegawai');
+Route::get('/deletedatapegawai/{id}',[EmployeeController::class, 'deletedatapegawai'])->name('deletedatapegawai');
 

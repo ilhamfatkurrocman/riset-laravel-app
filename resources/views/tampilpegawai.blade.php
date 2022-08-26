@@ -33,6 +33,11 @@
                                     </select>
                                 </div>
                                 <div class="mb-3">
+                                    <label class="form-label">Foto</label>
+                                    <input type="file" class="form-control" id="foto" name="foto" required><br>
+                                    <img src="{{ asset('fotopegawai/'. $data->foto) }}" style="width: 90px">
+                                </div>
+                                <div class="mb-3">
                                     <label class="form-label">Nomor Telepon</label>
                                     <input type="number" class="form-control" id="nomor_telepon" name="nomor_telepon"  value="{{ $data->nomor_telepon }}">
                                 </div>
