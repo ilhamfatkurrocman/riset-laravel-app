@@ -34,7 +34,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Foto</label>
-                                    <input type="file" class="form-control" id="foto" name="foto" required><br>
+                                    <input type="file" class="form-control" id="foto" name="foto"><br>
                                     <img src="{{ asset('fotopegawai/'. $data->foto) }}" style="width: 90px">
                                 </div>
                                 <div class="mb-3">

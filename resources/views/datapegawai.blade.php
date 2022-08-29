@@ -17,6 +17,13 @@
         
         <div class="container">
         <a href="/tambahdatapegawai" class="btn btn-success">+ Tambah Data</a>
+            <div class="row g-3 align-items-center mt-2">
+                <div class="col-auto">
+                    <form action="/" method="GET">
+                        <input type="text" id="search" name="search" class="form-control" aria-describedby="passwordHelpInline">
+                    </form>
+                </div>
+            </div>
             <div class="row">
                 <table class="table">
                     <thead>
