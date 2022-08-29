@@ -27,3 +27,6 @@ Route::get('/tampilkandatapegawai/{id}',[EmployeeController::class, 'tampilkanda
 Route::post('/updatedatapegawai/{id}',[EmployeeController::class, 'updatedatapegawai'])->name('updatedatapegawai');
 Route::get('/deletedatapegawai/{id}',[EmployeeController::class, 'deletedatapegawai'])->name('deletedatapegawai');
 
+//Export PDF
+Route::get('/exportpdf',[EmployeeController::class, 'exportpdf'])->name('exportpdf');
+

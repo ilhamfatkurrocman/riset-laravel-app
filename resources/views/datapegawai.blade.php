@@ -23,6 +23,9 @@
                         <input type="text" id="search" name="search" class="form-control" aria-describedby="passwordHelpInline">
                     </form>
                 </div>
+                <div class="col-auto">
+                    <a href="/exportpdf" class="btn btn-primary">Export PDF</a>
+                </div>
             </div>
             <div class="row">
                 <table class="table">
