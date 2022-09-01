@@ -15,7 +15,7 @@ class EmployeeController extends Controller
             // dd($data);
         }else {
             //Get data
-            $data = Employee::all();
+            $data = Employee::paginate(5);
             // dd($data); //Seperti echo
         }
 
